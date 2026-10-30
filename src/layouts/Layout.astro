@@ -12,6 +12,8 @@ const {
   description = 'Reglas y hoja de personaje de Pampa Primigenia, un juego de rol de horror cósmico en la pampa argentina.',
   active,
 } = Astro.props;
+
+const base = import.meta.env.BASE_URL.replace(/\/+$/, '');
 ---
 
 <!doctype html>
@@ -28,14 +30,14 @@ const {
       <p class="site-subtitle">Reglas y hoja de personaje</p>
       <nav class="tabs" aria-label="Secciones">
         <a
-          href="/"
+          href={base}
           class:list={['tab', { active: active === 'reglas' }]}
           aria-current={active === 'reglas' ? 'page' : undefined}
         >
           Reglas
         </a>
         <a
-          href="/personaje"
+          href={`${base}/personaje`}
           class:list={['tab', { active: active === 'personaje' }]}
           aria-current={active === 'personaje' ? 'page' : undefined}
         >

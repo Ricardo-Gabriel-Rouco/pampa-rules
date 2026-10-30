@@ -108,7 +108,10 @@ import Layout from '../layouts/Layout.astro';
       Este resumen es una síntesis de las reglas básicas. Descargá el resumen original en PDF.
     </p>
     <div class="callout-links">
-      <a href="/pampa-primigenia-reglas.pdf" download="pampa-primigenia-reglas.pdf">
+      <a
+        href={`${import.meta.env.BASE_URL.replace(/\/+$/, '')}/pampa-primigenia-reglas.pdf`}
+        download="pampa-primigenia-reglas.pdf"
+      >
         Descargar resumen en PDF
       </a>
       <a
