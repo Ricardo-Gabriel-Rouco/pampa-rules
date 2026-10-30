@@ -1,0 +1,123 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Reglas - Pampa Primigenia" active="reglas">
+  <h2 class="page-heading">Reglas básicas</h2>
+  <p class="page-intro">
+    Pampa Primigenia es un juego de rol inspirado en el folclore de la pampa argentina y el
+    horror cósmico de H. P. Lovecraft. Interpretás a un gaucho o gaucha con caballo, poncho,
+    boleadoras, facón y mate, dispuesto a enfrentar a las criaturas primigenias que amenazan
+    sus pagos. Usa el motor Powered by the Apocalypse (2d6 + atributo).
+  </p>
+
+  <div class="rules-grid">
+    <section class="card rule-card">
+      <h2>Tiradas de dados (2d6 + atributo)</h2>
+      <ul>
+        <li>
+          <strong>10 o más — Éxito completo:</strong> lográs tu objetivo sin complicaciones.
+          Con 12 o más, además obtenés un beneficio extra o recuperás 1 punto de Guapura.
+        </li>
+        <li>
+          <strong>7 a 9 — Éxito parcial:</strong> lográs el objetivo, pero pagás un costo,
+          recibís daño o sufrís una complicación.
+        </li>
+        <li>
+          <strong>6 o menos — Fallo:</strong> el Payador (Director de Juego) aplica las
+          consecuencias.
+        </li>
+      </ul>
+    </section>
+
+    <section class="card rule-card">
+      <h2>Atributos</h2>
+      <p>Se reparten +1, 0 y -1 entre los tres atributos.</p>
+      <ul>
+        <li><strong>MATE</strong> — Carisma, empatía y habilidad social.</li>
+        <li><strong>VIVEZA</strong> — Intelecto, astucia y percepción.</li>
+        <li><strong>FACÓN</strong> — Fuerza, agilidad y combate.</li>
+      </ul>
+    </section>
+
+    <section class="card rule-card">
+      <h2>Condiciones (-2 al atributo)</h2>
+      <p>Se reciben por impacto físico o emocional.</p>
+      <ul>
+        <li><strong>Lerdo:</strong> -2 en MATE.</li>
+        <li><strong>Cagao:</strong> -2 en FACÓN.</li>
+        <li><strong>Aturdío:</strong> -2 en VIVEZA.</li>
+      </ul>
+    </section>
+
+    <section class="card rule-card">
+      <h2>Guapura (reserva de voluntad)</h2>
+      <ul>
+        <li>Se empieza con 3 puntos (máximo).</li>
+        <li>Gastar 1 punto: tirar 3d6 en lugar de 2d6, o limpiar 1 Condición.</li>
+        <li>Recuperación: con un 12+ en una tirada o por actos heroicos excepcionales.</li>
+      </ul>
+    </section>
+
+    <section class="card rule-card">
+      <h2>Salud y Estabilidad</h2>
+      <ul>
+        <li>
+          <strong>Salud (5 puntos):</strong> registra el daño físico. Al llegar a 0 se activa la
+          movida Mirar a la Parca.
+        </li>
+        <li>
+          <strong>Estabilidad (5 puntos):</strong> mide la cordura frente al horror cósmico. El
+          primer punto perdido no se recupera jamás.
+        </li>
+      </ul>
+    </section>
+
+    <section class="card rule-card">
+      <h2>Pacto con el Mandinga</h2>
+      <p>
+        Marcás 1 punto de Estabilidad para convertir un fallo en éxito parcial, o un éxito
+        parcial en éxito completo.
+      </p>
+    </section>
+
+    <section class="card rule-card">
+      <h2>Movidas principales</h2>
+      <ul>
+        <li><strong>Cebar el mate (+MATE):</strong> ganar confianza u obtener información.</li>
+        <li><strong>Achurar (+FACÓN):</strong> atacar o cazar enemigos.</li>
+        <li>
+          <strong>Viveza Criolla (+VIVEZA):</strong> analizar situaciones, hallar pistas o
+          debilidades.
+        </li>
+        <li>
+          <strong>Esgrima Criolla (+FACÓN):</strong> duelo a cuchillo con tácticas
+          tradicionales.
+        </li>
+        <li>
+          <strong>Mirar a la Parca (+GUAPURA):</strong> tirada desesperada al llegar a 0 de
+          Salud para evitar la muerte.
+        </li>
+        <li><strong>Pitar (+GUAPURA):</strong> descansar fumando para curar condiciones.</li>
+      </ul>
+    </section>
+  </div>
+
+  <aside class="card callout" aria-label="Descarga del resumen de reglas">
+    <p>
+      Este resumen es una síntesis de las reglas básicas. Descargá el resumen original en PDF.
+    </p>
+    <div class="callout-links">
+      <a href="/pampa-primigenia-reglas.pdf" download="pampa-primigenia-reglas.pdf">
+        Descargar resumen en PDF
+      </a>
+      <a
+        href="https://primigenia-austral.itch.io/pampa-primigenia"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        Página oficial en itch.io
+      </a>
+    </div>
+  </aside>
+</Layout>

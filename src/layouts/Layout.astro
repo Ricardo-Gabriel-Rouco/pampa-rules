@@ -1,0 +1,64 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+  active?: 'reglas' | 'personaje';
+}
+
+const {
+  title,
+  description = 'Reglas y hoja de personaje de Pampa Primigenia, un juego de rol de horror cósmico en la pampa argentina.',
+  active,
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <header class="site-header">
+      <h1 class="site-title">Pampa Primigenia</h1>
+      <p class="site-subtitle">Reglas y hoja de personaje</p>
+      <nav class="tabs" aria-label="Secciones">
+        <a
+          href="/"
+          class:list={['tab', { active: active === 'reglas' }]}
+          aria-current={active === 'reglas' ? 'page' : undefined}
+        >
+          Reglas
+        </a>
+        <a
+          href="/personaje"
+          class:list={['tab', { active: active === 'personaje' }]}
+          aria-current={active === 'personaje' ? 'page' : undefined}
+        >
+          Hoja de personaje
+        </a>
+      </nav>
+    </header>
+
+    <main class="content">
+      <slot />
+    </main>
+
+    <footer class="site-footer">
+      <p>
+        Sierpes del Sur - Pampa Primigenia ·
+        <a
+          href="https://primigenia-austral.itch.io/pampa-primigenia"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          primigenia-austral.itch.io
+        </a>
+      </p>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,386 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Hoja de personaje - Pampa Primigenia" active="personaje">
+  <h2 class="page-heading">Hoja de personaje</h2>
+  <p class="page-intro">
+    Completá los datos de tu gaucho o gaucha. Los valores se guardan en este navegador y se
+    incluyen en un PDF editable que podés descargar.
+  </p>
+
+  <form id="character-form" class="card form-card" autocomplete="off">
+    <div class="form-grid">
+      <div class="field">
+        <label for="nombre">Nombre</label>
+        <input type="text" id="nombre" name="nombre" />
+      </div>
+
+      <div class="field">
+        <label for="apodo">Apodo</label>
+        <input type="text" id="apodo" name="apodo" />
+      </div>
+
+      <div class="field">
+        <label for="procedencia">Procedencia</label>
+        <input type="text" id="procedencia" name="procedencia" />
+      </div>
+
+      <fieldset>
+        <legend>Atributos</legend>
+        <p class="hint" id="atributos-hint">
+          Repartí +1, 0 y -1 entre los tres atributos: cada valor se usa una sola vez.
+        </p>
+        <div class="form-grid">
+          <div class="field">
+            <label for="mate">MATE - Carisma, empatía y habilidad social</label>
+            <select id="mate" name="mate" aria-describedby="atributos-hint">
+              <option value="">—</option>
+              <option value="+1">+1</option>
+              <option value="0">0</option>
+              <option value="-1">-1</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="viveza">VIVEZA - Intelecto, astucia y percepción</label>
+            <select id="viveza" name="viveza" aria-describedby="atributos-hint">
+              <option value="">—</option>
+              <option value="+1">+1</option>
+              <option value="0">0</option>
+              <option value="-1">-1</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="facon">FACÓN - Fuerza, agilidad y combate</label>
+            <select id="facon" name="facon" aria-describedby="atributos-hint">
+              <option value="">—</option>
+              <option value="+1">+1</option>
+              <option value="0">0</option>
+              <option value="-1">-1</option>
+            </select>
+          </div>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Guapura (3 puntos)</legend>
+        <div class="check-group boxes">
+          <label class="check">
+            <input type="checkbox" id="guapura_1" name="guapura_1" aria-label="Guapura 1" />
+          </label>
+          <label class="check">
+            <input type="checkbox" id="guapura_2" name="guapura_2" aria-label="Guapura 2" />
+          </label>
+          <label class="check">
+            <input type="checkbox" id="guapura_3" name="guapura_3" aria-label="Guapura 3" />
+          </label>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Salud (5 puntos)</legend>
+        <div class="check-group boxes">
+          <label class="check">
+            <input type="checkbox" id="salud_1" name="salud_1" aria-label="Salud 1" />
+          </label>
+          <label class="check">
+            <input type="checkbox" id="salud_2" name="salud_2" aria-label="Salud 2" />
+          </label>
+          <label class="check">
+            <input type="checkbox" id="salud_3" name="salud_3" aria-label="Salud 3" />
+          </label>
+          <label class="check">
+            <input type="checkbox" id="salud_4" name="salud_4" aria-label="Salud 4" />
+          </label>
+          <label class="check">
+            <input type="checkbox" id="salud_5" name="salud_5" aria-label="Salud 5" />
+          </label>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Estabilidad (5 puntos)</legend>
+        <div class="check-group boxes">
+          <label class="check">
+            <input type="checkbox" id="estabilidad_1" name="estabilidad_1" aria-label="Estabilidad 1" />
+          </label>
+          <label class="check">
+            <input type="checkbox" id="estabilidad_2" name="estabilidad_2" aria-label="Estabilidad 2" />
+          </label>
+          <label class="check">
+            <input type="checkbox" id="estabilidad_3" name="estabilidad_3" aria-label="Estabilidad 3" />
+          </label>
+          <label class="check">
+            <input type="checkbox" id="estabilidad_4" name="estabilidad_4" aria-label="Estabilidad 4" />
+          </label>
+          <label class="check">
+            <input type="checkbox" id="estabilidad_5" name="estabilidad_5" aria-label="Estabilidad 5" />
+          </label>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Condiciones</legend>
+        <div class="check-group">
+          <label class="check">
+            <input type="checkbox" id="cond_lerdo" name="cond_lerdo" />
+            Lerdo (-2 MATE)
+          </label>
+          <label class="check">
+            <input type="checkbox" id="cond_cagao" name="cond_cagao" />
+            Cagao (-2 FACÓN)
+          </label>
+          <label class="check">
+            <input type="checkbox" id="cond_aturdio" name="cond_aturdio" />
+            Aturdío (-2 VIVEZA)
+          </label>
+        </div>
+      </fieldset>
+
+      <div class="field full">
+        <label for="caballo">Caballo</label>
+        <input type="text" id="caballo" name="caballo" />
+      </div>
+
+      <div class="field full">
+        <label for="equipo">Equipo</label>
+        <textarea id="equipo" name="equipo"></textarea>
+      </div>
+
+      <div class="field full">
+        <label for="rasgos">Rasgos e historia</label>
+        <textarea id="rasgos" name="rasgos"></textarea>
+      </div>
+
+      <div class="field full">
+        <label for="notas">Notas</label>
+        <textarea id="notas" name="notas"></textarea>
+      </div>
+
+      <div class="form-actions">
+        <button type="button" id="download-pdf" class="btn btn-primary">Descargar PDF</button>
+        <button type="reset" class="btn btn-secondary">Limpiar</button>
+        <p id="form-status" class="status" role="status" aria-live="polite"></p>
+      </div>
+    </div>
+  </form>
+</Layout>
+
+<script>
+  import { createCharacterSheet } from '../lib/character-sheet.js';
+
+  const STORAGE_KEY = 'pampa:personaje';
+  const form = document.querySelector('#character-form');
+  const downloadButton = document.querySelector('#download-pdf');
+  const status = document.querySelector('#form-status');
+
+  const getElement = (name) => {
+    if (!form) return null;
+    return Array.from(form.elements).find((element) => element.name === name) ?? null;
+  };
+
+  const getValue = (name) => {
+    const element = getElement(name);
+    return element && typeof element.value === 'string' ? element.value : '';
+  };
+
+  const isChecked = (name) => Boolean(getElement(name)?.checked);
+
+  const collectFormState = () => {
+    const state = {};
+    if (!form) return state;
+
+    for (const element of form.elements) {
+      if (!element.name) continue;
+      state[element.name] = element.type === 'checkbox' ? element.checked : element.value;
+    }
+
+    return state;
+  };
+
+  const collectCharacterData = () => ({
+    nombre: getValue('nombre'),
+    apodo: getValue('apodo'),
+    procedencia: getValue('procedencia'),
+    mate: getValue('mate'),
+    viveza: getValue('viveza'),
+    facon: getValue('facon'),
+    guapura: [1, 2, 3].map((index) => isChecked(`guapura_${index}`)),
+    salud: [1, 2, 3, 4, 5].map((index) => isChecked(`salud_${index}`)),
+    estabilidad: [1, 2, 3, 4, 5].map((index) => isChecked(`estabilidad_${index}`)),
+    condiciones: {
+      lerdo: isChecked('cond_lerdo'),
+      cagao: isChecked('cond_cagao'),
+      aturdio: isChecked('cond_aturdio'),
+    },
+    caballo: getValue('caballo'),
+    equipo: getValue('equipo'),
+    rasgos: getValue('rasgos'),
+    notas: getValue('notas'),
+  });
+
+  const setStatus = (message, isError = false) => {
+    if (!status) return;
+    status.textContent = message;
+    status.classList.toggle('status-error', isError);
+  };
+
+  const persistFormState = () => {
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(collectFormState()));
+    } catch {
+      // Storage can be unavailable in private mode or when the quota is exhausted.
+    }
+  };
+
+  const restoreFormState = () => {
+    if (!form) return;
+
+    try {
+      const raw = localStorage.getItem(STORAGE_KEY);
+      if (!raw) return;
+
+      const state = JSON.parse(raw);
+      if (!state || typeof state !== 'object') return;
+
+      for (const [name, value] of Object.entries(state)) {
+        const element = getElement(name);
+        if (!element) continue;
+
+        if (element.type === 'checkbox') {
+          element.checked = Boolean(value);
+        } else {
+          element.value = typeof value === 'string' ? value : '';
+        }
+      }
+    } catch {
+      // Ignore corrupted or unavailable storage and keep the form empty.
+    }
+  };
+
+  const ATTRIBUTE_NAMES = ['mate', 'viveza', 'facon'];
+  const attributeSelects = ATTRIBUTE_NAMES.map((name) => getElement(name)).filter(
+    (element) => element?.tagName === 'SELECT'
+  );
+  let attributeValues = { mate: '', viveza: '', facon: '' };
+
+  const readAttributeValues = () =>
+    Object.fromEntries(attributeSelects.map((select) => [select.name, select.value]));
+
+  const syncAttributeOptions = () => {
+    const values = readAttributeValues();
+
+    for (const select of attributeSelects) {
+      const usedByOthers = new Set(
+        attributeSelects
+          .filter((other) => other !== select)
+          .map((other) => values[other.name])
+          .filter(Boolean)
+      );
+
+      for (const option of select.options) {
+        if (!option.value) continue;
+        option.disabled = option.value !== values[select.name] && usedByOthers.has(option.value);
+      }
+    }
+  };
+
+  const refreshAttributeState = () => {
+    const seen = new Set();
+
+    for (const select of attributeSelects) {
+      if (!select.value) continue;
+      if (seen.has(select.value)) {
+        select.value = '';
+      } else {
+        seen.add(select.value);
+      }
+    }
+
+    attributeValues = readAttributeValues();
+    syncAttributeOptions();
+  };
+
+  const handleAttributeChange = (event) => {
+    const select = event.target;
+    if (!ATTRIBUTE_NAMES.includes(select.name)) return;
+
+    const previous = attributeValues[select.name] ?? '';
+    const picked = select.value;
+
+    if (picked && picked !== previous) {
+      const holder = attributeSelects.find(
+        (other) => other.name !== select.name && other.value === picked
+      );
+      if (holder) holder.value = previous;
+    }
+
+    refreshAttributeState();
+    persistFormState();
+  };
+
+  const slugify = (value) =>
+    String(value)
+      .normalize('NFD')
+      .replace(/[\u0300-\u036f]/g, '')
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, '-')
+      .replace(/^-+|-+$/g, '')
+      .slice(0, 60);
+
+  const buildFileName = () => {
+    const slug = slugify(getValue('nombre').trim());
+    return slug ? `hoja-${slug}.pdf` : 'hoja-de-personaje-pampa-primigenia.pdf';
+  };
+
+  const downloadPdf = async () => {
+    if (!downloadButton) return;
+
+    downloadButton.disabled = true;
+    setStatus('Generando PDF…');
+
+    try {
+      const bytes = await createCharacterSheet(collectCharacterData());
+      const blob = new Blob([bytes], { type: 'application/pdf' });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement('a');
+
+      link.href = url;
+      link.download = buildFileName();
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+      window.setTimeout(() => URL.revokeObjectURL(url), 1000);
+
+      setStatus('PDF descargado.');
+    } catch (error) {
+      console.error(error);
+      setStatus('No se pudo generar el PDF. Probá de nuevo.', true);
+    } finally {
+      downloadButton.disabled = false;
+    }
+  };
+
+  if (form) {
+    restoreFormState();
+    refreshAttributeState();
+    attributeSelects.forEach((select) =>
+      select.addEventListener('change', handleAttributeChange)
+    );
+    form.addEventListener('input', persistFormState);
+    form.addEventListener('change', persistFormState);
+    form.addEventListener('reset', () => {
+      try {
+        localStorage.removeItem(STORAGE_KEY);
+      } catch {
+        // Storage can be unavailable; the visible form still resets.
+      }
+      setStatus('');
+      window.setTimeout(refreshAttributeState, 0);
+    });
+  }
+
+  downloadButton?.addEventListener('click', downloadPdf);
+</script>
